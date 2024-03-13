@@ -1,4 +1,4 @@
-﻿namespace exercicio05
+namespace exercicio05
 {
     internal class Program
     {
@@ -16,14 +16,23 @@
 
         public static string invertString(string input)
         {
-
-
-
             char[] invertida = input.ToCharArray();
-            Array.Reverse(invertida);
+            int i = 0;
+            int c = input.Length - 1;
+
+            while (i < c)
+            {
+
+                char temp = invertida[i];
+                invertida[i] = invertida[c];
+                invertida[c] = temp;
+
+                i++;
+                c--;
+            }
 
             return new string(invertida);
-
         }
+
     }
 }
